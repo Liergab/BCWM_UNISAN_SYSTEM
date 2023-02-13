@@ -13,7 +13,7 @@ if(isset($_POST['submit'])){
     $bapt = $_POST['bapt'];
     $acl = $_POST['acl'];
 
-    $querymember ="INSERT INTO tbl_member (fname,lname,gender,age,bdate,address,position,bapt,acl) VALUES ('$fname','$lname','$gender','$bdate','$age','$address','$position','$bapt','$acl')";
+    $querymember ="INSERT INTO tbl_member (fname,lname,gender,age,bdate,address,position,bapt,acl) VALUES ('$fname','$lname','$gender','$age','$bdate','$address','$position','$bapt','$acl')";
     $sqlmember = $con->query($querymember);
     echo"<script>alert('Successfully added')</script>";
     echo"<script>window.location.href='member.php'</script>";

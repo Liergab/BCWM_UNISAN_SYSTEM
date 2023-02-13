@@ -26,6 +26,7 @@ $sqlMember = mysqli_query($con,$queryMember) or die(connect_error);
         <link href="https://cdn.jsdelivr.net/npm/simple-datatables@latest/dist/style.css" rel="stylesheet" />
         <link href="../../css/styles.css" rel="stylesheet" />
         <script src="https://use.fontawesome.com/releases/v6.1.0/js/all.js" crossorigin="anonymous"></script>
+        <script src="https://kit.fontawesome.com/1781ced494.js" crossorigin="anonymous"></script>
     </head>
     <body class="sb-nav-fixed">
         <nav class="sb-topnav navbar navbar-expand navbar-dark bg-dark">
@@ -130,7 +131,7 @@ $sqlMember = mysqli_query($con,$queryMember) or die(connect_error);
                 </nav>
             </div>
             <div id="layoutSidenav_content">
-                <main>
+                <main style="padding:20px 40px;">
                 <div class="container-fluid px-4">
                         <h1 class="mt-4">MANAGE MEMBER</h1>
                         <ol class="breadcrumb mb-4">
@@ -152,15 +153,15 @@ $sqlMember = mysqli_query($con,$queryMember) or die(connect_error);
                                 DataTable Example
                             </div>
                             <div class="card-body">
-                                <table id="datatablesSimple">
+                                <table id="datatablesSimple" class="table table-bordered table-striped">
                                     <thead>
                                         <tr>
-                                            <th>First name</th>
-                                            <th>Last name</th>
-                                            <th>Address</th>
-                                            <th>Gender</th>
-                                            <th>Age</th>
-                                            <th>Option</th>
+                                            <th >First name</th>
+                                            <th >Last name</th>
+                                            <th >Address</th>
+                                            <th >Gender</th>
+                                            <th >Age</th>
+                                            <th  style="width:100px !important;">Option</th>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -171,7 +172,7 @@ $sqlMember = mysqli_query($con,$queryMember) or die(connect_error);
                                             <td><?php echo $res['address']; ?></td>
                                             <td><?php echo $res['gender']; ?></td>
                                             <td><?php echo $res['age']; ?></td>
-                                            <td><a href="" class="btn btn-danger">Delete</a></td>
+                                            <td><?php echo "<a href='delete.php?id=$res[id]' class='btn btn-danger'><i class='fa-solid fa-trash'></i></a>   <a href='' class='btn btn-success'><i class='fa-solid fa-pen-to-square'></i></a>"?></td>
                                         </tr>
                                        <?php }  ?>
                                     </tbody>
