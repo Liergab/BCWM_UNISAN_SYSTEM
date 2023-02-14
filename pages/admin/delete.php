@@ -7,5 +7,5 @@ $queryDeleteM = "DELETE FROM admin WHERE id=$id";
 $sqlDeleteM = $con->query($queryDeleteM);
 
 echo"<script>alert('Successfully Delete')</script>";
-echo"<script>window.location.href='member.php'</script>";
+echo"<script>window.location.href='admin.php'</script>";
 ?>
