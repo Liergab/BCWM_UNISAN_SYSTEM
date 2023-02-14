@@ -60,7 +60,7 @@ if($_SESSION['status'] == 'invalid' || empty($_SESSION['status'])){
                 <nav class="sb-sidenav accordion sb-sidenav-dark" id="sidenavAccordion">
                     <div class="sb-sidenav-menu">
                         <div class="nav">
-                            <div class="sb-sidenav-menu-heading"><center> <img src="assets/img/bcwmlogo.jpg" alt="" style="width:100px;"></center></div>
+                            <div class="sb-sidenav-menu-heading"><center> <img src="assets/img/Unisanlogo.jpg" alt="" style="width:100px;"></center></div>
                             <a class="nav-link" href="index.php">
                                 <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
                                 Dashboard
@@ -74,7 +74,7 @@ if($_SESSION['status'] == 'invalid' || empty($_SESSION['status'])){
                             <div class="collapse" id="collapseLayouts" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
                                 <nav class="sb-sidenav-menu-nested nav">
                                     <a class="nav-link" href="pages/member/member.php">Member</a>
-                                    <a class="nav-link" href="layout-sidenav-light.php">Light Sidenav</a>
+                                    <a class="nav-link" href="pages/admin/admin.php">Admin</a>
                                 </nav>
                             </div>
                             <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapsePages" aria-expanded="false" aria-controls="collapsePages">
