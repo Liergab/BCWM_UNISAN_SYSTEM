@@ -172,7 +172,8 @@ $sqlMember = mysqli_query($con,$queryMember) or die(connect_error);
                                             <td><?php echo $res['address']; ?></td>
                                             <td><?php echo $res['gender']; ?></td>
                                             <td><?php echo $res['age']; ?></td>
-                                            <td><?php echo "<a href='delete.php?id=$res[id]' class='btn btn-danger'><i class='fa-solid fa-trash'></i></a>   <a href='' class='btn btn-success'><i class='fa-solid fa-pen-to-square'></i></a>"?></td>
+                                            <td><?php echo "<a href='delete.php?id=$res[id]' class='btn btn-danger'><i class='fa-solid fa-trash'></i></a> |
+                                             <a href='editModal.php?id=$res[id]' class='btn btn-success' ><i class='fa-solid fa-pen-to-square'></i></a>"?></td>
                                         </tr>
                                        <?php }  ?>
                                     </tbody>
@@ -180,6 +181,7 @@ $sqlMember = mysqli_query($con,$queryMember) or die(connect_error);
                             </div>
                         </div>
                     </div>
+                    
                 </main>
                 <footer class="py-4 bg-light mt-auto">
                     <div class="container-fluid px-4">
