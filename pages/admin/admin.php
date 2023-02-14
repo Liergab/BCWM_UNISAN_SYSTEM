@@ -5,13 +5,13 @@ session_start();
 if($_SESSION['status'] == 'invalid' || empty($_SESSION['status'])){
 
     $_SESSION['status'] = 'invalid';
-    echo"<script>window.location.href='login.php'</script>";
+    echo"<script>window.location.href='../../login.php'</script>";
 
 }
 
 
-$queryMember = "SELECT * FROM tbl_member ORDER BY id";
-$sqlMember = mysqli_query($con,$queryMember) or die(connect_error);
+$queryAdmin = "SELECT * FROM admin ORDER BY id";
+$sqlAdmin = mysqli_query($con,$queryAdmin) or die(connect_error);
 
 ?>
 <!DOCTYPE php>
@@ -78,8 +78,8 @@ $sqlMember = mysqli_query($con,$queryMember) or die(connect_error);
                             </a>
                             <div class="collapse" id="collapseLayouts" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
                                 <nav class="sb-sidenav-menu-nested nav">
-                                <a class="nav-link" href="member.php">Member</a>
-                                    <a class="nav-link" href="../admin/admin.php">admin</a>
+                                    <a class="nav-link" href="../member/member.php">Member</a>
+                                    <a class="nav-link" href="admin.php">Admin</a>
                                 </nav>
                             </div>
                             <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapsePages" aria-expanded="false" aria-controls="collapsePages">
@@ -133,9 +133,9 @@ $sqlMember = mysqli_query($con,$queryMember) or die(connect_error);
             <div id="layoutSidenav_content">
                 <main style="padding:20px 40px;">
                 <div class="container-fluid px-4">
-                        <h1 class="mt-4">MANAGE MEMBER</h1>
+                        <h1 class="mt-4">MANAGE ADMIN</h1>
                         <ol class="breadcrumb mb-4">
-                            <li class="breadcrumb-item active">MEMBER</li>
+                            <li class="breadcrumb-item active">ADMINISTRATOR</li>
                         </ol>
                         <div class="row">
                             <div class="col-xl-2 col-md-4 mb-5" >
@@ -146,7 +146,7 @@ $sqlMember = mysqli_query($con,$queryMember) or die(connect_error);
                                     </div>
                                
                             </div>
-                          <?php include 'addModal.php'; ?>
+                         
                         <div class="card mb-4">
                             <div class="card-header">
                                 <i class="fas fa-table me-1"></i>
@@ -156,22 +156,18 @@ $sqlMember = mysqli_query($con,$queryMember) or die(connect_error);
                                 <table id="datatablesSimple" class="table table-bordered table-striped">
                                     <thead>
                                         <tr>
-                                            <th >First name</th>
-                                            <th >Last name</th>
-                                            <th >Address</th>
-                                            <th >Gender</th>
-                                            <th >Age</th>
-                                            <th  style="width:100px !important;">Option</th>
+                                            <th>Username</th>
+                                            <th>Name</th>
+                                           
+                                            <th style="width:100px !important;">Option</th>
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        <?php while($res =$sqlMember->fetch_assoc() ) { ?>
+                                        <?php while($res =$sqlAdmin->fetch_assoc() ) { ?>
                                         <tr>
-                                            <td><?php echo $res['fname']; ?></td>
-                                            <td><?php echo $res['lname']; ?></td>
-                                            <td><?php echo $res['address']; ?></td>
-                                            <td><?php echo $res['gender']; ?></td>
-                                            <td><?php echo $res['age']; ?></td>
+                                            <td><?php echo $res['username']; ?></td>
+                                            <td><?php echo $res['name']; ?></td>
+                                            
                                             <td><?php echo "<a href='delete.php?id=$res[id]' class='btn btn-danger'><i class='fa-solid fa-trash'></i></a> |
                                              <a href='editModal.php?id=$res[id]' class='btn btn-success' ><i class='fa-solid fa-pen-to-square'></i></a>"?></td>
                                         </tr>
@@ -181,7 +177,7 @@ $sqlMember = mysqli_query($con,$queryMember) or die(connect_error);
                             </div>
                         </div>
                     </div>
-                    
+                    <?php include 'addModal.php'; ?>
                 </main>
                 <footer class="py-4 bg-light mt-auto">
                     <div class="container-fluid px-4">
@@ -205,4 +201,3 @@ $sqlMember = mysqli_query($con,$queryMember) or die(connect_error);
         <script src="https://cdn.jsdelivr.net/npm/simple-datatables@latest" crossorigin="anonymous"></script>
         <script src="../../js/datatables-simple-demo.js"></script>
     </body>
-</php>

@@ -103,16 +103,18 @@
                     
                 </div>
                 <div class="col-12">
-                    <button class="btn btn-primary" name="submit" type="submit">Submit form</button>
+                    
                 </div>
-        </form>
+        
 
                 
       </div>
       <div class="modal-footer">
+      <button class="btn btn-primary" name="submit" type="submit">Submit form</button>
         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
        
       </div>
+      </form>
     </div>
   </div>
 </div>
