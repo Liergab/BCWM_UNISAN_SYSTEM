@@ -19,129 +19,7 @@ while($res = mysqli_fetch_array($sqlEdit)){
 
 }
 
-
-
 ?>
-<!-- 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-  <title>Document</title>
-</head>
-<body>
-<div class="container">
-<form class="row g-3 needs-validation" novalidate action="update.php" method="post">
-                <div class="col-md-4">
-                    <label for="validationCustom01" class="form-label">First name</label>
-                    <input type="text" class="form-control" id="validationCustom01" name="fname" placeholder="First name" value=<?php echo $fname ?> required>
-                    <div class="valid-feedback">
-                    Looks good!
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <label for="validationCustom02" class="form-label">Last name</label>
-                    <input type="text" class="form-control" id="validationCustom02" name="lname"  value=<?php echo $lname ?> placeholder="Last name" required>
-                    <div class="valid-feedback">
-                    Looks good!
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <label for="validationCustomUsername" class="form-label">Gender</label>
-                    <div class="input-group has-validation">
-                    
-                    <input type="text" class="form-control" id="validationCustomUsername" name="gender" aria-describedby="inputGroupPrepend"  value=<?php echo $gender ?>  placeholder="Gender" required>
-                    
-                    </div>
-                </div>
-                <div class="col-md-2">
-                    <label for="validationCustom03" class="form-label">BIRTH DAY</label>
-                    <input type="date" class="form-control" name="bdate" id="validationCustom03"  value=<?php echo $bdate ?> required>
-                    <div class="invalid-feedback">
-                    Please provide a valid city.
-                    </div>
-                </div>
-                <div class="col-md-2">
-                    <label for="validationCustom03" class="form-label">AGE</label>
-                    <input type="number" class="form-control" name="age" id="validationCustom03"  value=<?php echo $age ?> required>
-                    <div class="invalid-feedback">
-                    Please provide a valid city.
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <label for="validationCustom04" class="form-label">ADDRESS</label>
-                    <select class="form-select" name="address" id="validationCustom04"  value=<?php echo $address ?>  required>
-                    <option selected disabled value="">Choose...</option>
-                    <option>Brgy. Malvar</option>
-                    <option>Brgy. Muliguin</option>
-                    <option>Brgy. Punta</option>
-                    <option>Brgy. Poctol</option>
-                    <option>Brgy. F Dejesus</option>
-                    <option>Brgy. Malvar</option>
-                    </select>
-                    <div class="invalid-feedback">
-                    Please select a valid state.
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <label for="validationCustom04" class="form-label">POSITION</label>
-                    <select class="form-select" name="position" id="validationCustom04"  value=<?php echo $position ?> required>
-                    <option selected disabled value="">Choose...</option>
-                    <option>Member</option>
-                    <option>Leader</option>
-                    <option>Pastor</option>
-                    </select>
-                    <div class="invalid-feedback">
-                    Please select a valid state.
-                    </div>
-                </div>
-                <div class="col-md-2">
-                    <label for="validationCustom04" class="form-label">BAPT in BCWM</label>
-                    <select class="form-select" name="bapt" id="validationCustom04"  value=<?php echo $bapt ?> required>
-                    <option selected disabled value="">Choose...</option>
-                    <option>Yes</option>
-                    <option>No</option>
-                    <option>Willing</option>
-                  
-                    </select>
-                    <div class="invalid-feedback">
-                    Please select a valid state.
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <label for="validationCustom04" class="form-label">AGE IN CHRISTIAN LIVING</label>
-                    <select class="form-select" name="acl" id="validationCustom04"   value=<?php echo $acl ?>required>
-                    <option selected disabled value="">Choose...</option>
-                    <option>1-3 Years</option>
-                    <option>4-6 Years</option>
-                    <option>7-10 Years</option>
-                    <option>11-20 Years</option>
-                  
-                    </select>
-                    <div class="invalid-feedback">
-                    Please select a valid state.
-                    </div>
-                </div>
-                
-                <div class="col-12">
-                    
-                </div>
-                <div class="col-12">
-                    <input type="hidden" name="id" value=<?php echo $_GET['id'];?>>
-                    <button class="btn btn-primary" name="update" type="submit">Submit form</button>
-                    <a href="member.php"  class="btn btn-danger">Cancel</a>
-                </div>
-        </form>
-
-</div>
-
-
-  
-</body>
-</html> -->
 
 <!DOCTYPE php>
 <php lang="en">
@@ -266,17 +144,18 @@ while($res = mysqli_fetch_array($sqlEdit)){
                               <ol class="breadcrumb mb-4">
                                   <li class="breadcrumb-item active">MEMBER</li>
                               </ol>
-                               <form class="row g-3 needs-validation" novalidate action="update.php" method="post">
+                              <p id="error" style='color:red;'></p>
+                               <form class="row g-3 needs-validation" id="form" action="update.php" method="post">
                                         <div class="col-md-4">
                                             <label for="validationCustom01" class="form-label">First name</label>
-                                            <input type="text" class="form-control" id="validationCustom01" name="fname" placeholder="First name" value=<?php echo $fname ?> required>
+                                            <input type="text" class="form-control" id="fname" name="fname" placeholder="First name" value=<?php echo $fname ?> required>
                                             <div class="valid-feedback">
                                             Looks good!
                                             </div>
                                         </div>
                                         <div class="col-md-4">
                                             <label for="validationCustom02" class="form-label">Last name</label>
-                                            <input type="text" class="form-control" id="validationCustom02" name="lname"  value=<?php echo $lname ?> placeholder="Last name" required>
+                                            <input type="text" class="form-control" id="lname" name="lname"  value=<?php echo $lname ?> placeholder="Last name" required>
                                             <div class="valid-feedback">
                                             Looks good!
                                             </div>
@@ -285,27 +164,27 @@ while($res = mysqli_fetch_array($sqlEdit)){
                                             <label for="validationCustomUsername" class="form-label">Gender</label>
                                             <div class="input-group has-validation">
                                             
-                                            <input type="text" class="form-control" id="validationCustomUsername" name="gender" aria-describedby="inputGroupPrepend"  value=<?php echo $gender ?>  placeholder="Gender" required>
+                                            <input type="text" class="form-control" id="gender" name="gender" aria-describedby="inputGroupPrepend"  value=<?php echo $gender ?>  placeholder="Gender" required>
                                             
                                             </div>
                                         </div>
                                         <div class="col-md-2">
                                             <label for="validationCustom03" class="form-label">BIRTH DAY</label>
-                                            <input type="date" class="form-control" name="bdate" id="validationCustom03"  value=<?php echo $bdate ?> required>
+                                            <input type="date" class="form-control" name="bdate" id="bdate"  value=<?php echo $bdate ?> required>
                                             <div class="invalid-feedback">
                                             Please provide a valid city.
                                             </div>
                                         </div>
                                         <div class="col-md-2">
                                             <label for="validationCustom03" class="form-label">AGE</label>
-                                            <input type="number" class="form-control" name="age" id="validationCustom03"  value=<?php echo $age ?> required>
+                                            <input type="number" class="form-control" name="age" id="age"  value=<?php echo $age ?> required>
                                             <div class="invalid-feedback">
                                             Please provide a valid city.
                                             </div>
                                         </div>
                                         <div class="col-md-4">
                                             <label for="validationCustom04" class="form-label">ADDRESS</label>
-                                            <select class="form-select" name="address" id="validationCustom04"  value=<?php echo $address ?>  required>
+                                            <select class="form-select" name="address" id="address"  value=<?php echo $address ?>  required>
                                             <option selected disabled value="">Choose...</option>
                                             <option>Brgy. Malvar</option>
                                             <option>Brgy. Muliguin</option>
@@ -320,7 +199,7 @@ while($res = mysqli_fetch_array($sqlEdit)){
                                         </div>
                                         <div class="col-md-4">
                                             <label for="validationCustom04" class="form-label">POSITION</label>
-                                            <select class="form-select" name="position" id="validationCustom04"  value=<?php echo $position ?> required>
+                                            <select class="form-select" name="position" id="position"  value=<?php echo $position ?> required>
                                             <option selected disabled value="">Choose...</option>
                                             <option>Member</option>
                                             <option>Leader</option>
@@ -332,7 +211,7 @@ while($res = mysqli_fetch_array($sqlEdit)){
                                         </div>
                                         <div class="col-md-2">
                                             <label for="validationCustom04" class="form-label">BAPT in BCWM</label>
-                                            <select class="form-select" name="bapt" id="validationCustom04"  value=<?php echo $bapt ?> required>
+                                            <select class="form-select" name="bapt" id="bapt"  value=<?php echo $bapt ?> required>
                                             <option selected disabled value="">Choose...</option>
                                             <option>Yes</option>
                                             <option>No</option>
@@ -345,7 +224,7 @@ while($res = mysqli_fetch_array($sqlEdit)){
                                         </div>
                                         <div class="col-md-4">
                                             <label for="validationCustom04" class="form-label">AGE IN CHRISTIAN LIVING</label>
-                                            <select class="form-select" name="acl" id="validationCustom04"   value=<?php echo $acl ?>required>
+                                            <select class="form-select" name="acl" id="acl"   value=<?php echo $acl ?> required>
                                             <option selected disabled value="">Choose...</option>
                                             <option>1-3 Years</option>
                                             <option>4-6 Years</option>
@@ -384,6 +263,62 @@ while($res = mysqli_fetch_array($sqlEdit)){
                 </footer>
             </div>
         </div>
+            <script>
+                const fname = document.querySelector('#fname')
+                const lname = document.querySelector('#lname')
+                const gender = document.querySelector('#gender')
+                const age = document.querySelector('#age')
+                const bdate = document.getElementById("bdate")
+                const address = document.querySelector('#address')
+                const position = document.querySelector('#position')
+                const bapt = document.querySelector('#bapt')
+                const acl = document.querySelector('#acl')
+                const form = document.querySelector("#form")
+                const error = document.getElementById("error")
+                
+                form.addEventListener('submit', (e) => {
+                let messages = []
+                if(fname.value === '' || fname.value == null){
+                    messages.push(' firstname is required')
+                }
+                if(lname.value === '' || lname.value == null){
+                    messages.push(' Latsname required')
+                }
+                if(gender.value === '' || gender.value == null){
+                    messages.push(' Gender required')
+                }
+                if(age.value === '' || age.value == null){
+                    messages.push(' Age required')
+                }
+            
+                if(bdate.value === '' || bdate..value == null){
+                    messages.push(' BirthDate required')
+                }
+            
+                if(address.value === '' || address.value == null){
+                    messages.push(' Address required')
+                }
+            
+                if(position.value === '' || position.value == null){
+                    messages.push(' Poition required')
+                }
+            
+                if(bapt.value === '' || bapt.value == null){
+                    messages.push(' Bapt required')
+                }
+            
+                if(acl.value === '' || acl.value == null){
+                    messages.push(' ACL required')
+                }
+            
+                if(messages.length > 0){
+                    e.preventDefault()
+                    error.innerText = messages.join(', ')
+                }
+            })
+            </script>
+
+           
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
         <script src="../../js/scripts.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js" crossorigin="anonymous"></script>
@@ -394,4 +329,3 @@ while($res = mysqli_fetch_array($sqlEdit)){
     </body>
 </php>
 
-           
